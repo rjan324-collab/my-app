@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 의료장비 업무 도우미 — 장비 입고 체크리스트
 
-## Getting Started
+한양대학교구리병원 물류팀이 의료장비 협조전 접수부터 입고까지의 절차를 단계별로 빠짐없이 관리하기 위한 내부 업무용 웹앱입니다.
 
-First, run the development server:
+## 이 앱이 하는 일
+
+- **6단계 체크리스트**: 협조전 전송 → 접수 → 결재문 기안(서류 5개 확인) → 계약일자 확정 → 계약서·납품일 확인 → 입고·검수를 순서대로만 진행할 수 있게 관리합니다.
+- **동시 진행 현황판**: 여러 장비 건이 지금 몇 번째 단계에 있는지 한눈에 확인할 수 있습니다.
+- **학년도별 심의 통과 현황**: 정책/구입/공동운영/임대 구분별 집계와 네고율을 보여줍니다.
+- 데이터는 서버 없이 브라우저(localStorage)에만 저장됩니다.
+
+자세한 기획·설계 내용은 [PRD.md](PRD.md), [PLAN.md](PLAN.md), [DESIGN.md](DESIGN.md), 점검 결과는 [CHECK.md](CHECK.md)를 참고하세요.
+
+## 기술 스택
+
+- Next.js (App Router) + TypeScript + Tailwind CSS
+- 배포: Vercel
+
+## 개발 환경 실행
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[http://localhost:3000](http://localhost:3000)에서 확인할 수 있습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 접근 제한
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+내부 업무 데이터를 다루기 때문에, 배포된 페이지는 비밀번호 게이트로 접근을 제한합니다. 비밀번호는 `.env`의 `SITE_PASSWORD`로 설정합니다.
