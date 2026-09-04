@@ -36,6 +36,12 @@ yarn-error.log*
 # vercel
 .vercel
 
+# 병원 내부 원본 자료·임시 파일 (커밋 금지)
+*.xlsx
+/trash-can/
+/.bkit/
+/.claude/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

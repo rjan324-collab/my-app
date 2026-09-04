@@ -1,0 +1,14 @@
+# 비밀 값·내부 도구 파일·실제 업무 데이터는 배포 결과물에 포함하지 않는다
+.env*
+.bkit
+.claude
+.git
+trash-can
+*.bak
+*.xlsx
+AGENTS.md
+CLAUDE.md
+PRD.md
+PLAN.md
+DESIGN.md
+README.md
